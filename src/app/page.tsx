@@ -1,95 +1,90 @@
+'use client'
+
+import { useState } from "react";
 import Image from "next/image";
-import styles from "./page.module.css";
+
+import { Howl } from 'howler'
+
+import styles from "./styles.module.scss";
 
 export default function Home() {
+  const [isPlaying, setIsPlaying] = useState(false)
+
+  const sound = new Howl({
+    src: ['/bgsound.mp3'],
+    autoplay: false,
+    mute: true,
+    loop: true,
+    volume: 0.35,
+    onplay: () => setIsPlaying(true),
+    onstop: () => setIsPlaying(false),
+    onend: () => setIsPlaying(false),
+  });
+
+  const handleSoundButtonClick = () => {
+    if (!isPlaying) {
+      sound.play()
+      sound.mute(false)
+    }
+  }
+
   return (
-    <main className={styles.main}>
-      <div className={styles.description}>
-        <p>
-          Get started by editing&nbsp;
-          <code className={styles.code}>src/app/page.tsx</code>
-        </p>
-        <div>
-          <a
-            href="https://vercel.com?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            By{" "}
-            <Image
-              src="/vercel.svg"
-              alt="Vercel Logo"
-              className={styles.vercelLogo}
-              width={100}
-              height={24}
-              priority
-            />
-          </a>
+    <div className={styles.container}>
+      <div className={styles.navbar}>
+        <div className={styles.sound} onClick={handleSoundButtonClick}>
+          <Image width={20} height={12} src={sound == false ? 'assets/icons/mute.svg' : 'assets/icons/sound.svg'} alt='Logo' />
         </div>
       </div>
 
-      <div className={styles.center}>
-        <Image
-          className={styles.logo}
-          src="/next.svg"
-          alt="Next.js Logo"
-          width={180}
-          height={37}
-          priority
-        />
+      <div className={styles.centerContainer}>
+        <div className={styles.logoContainer}>
+          <Image width={300} height={190} src={'assets/brand/logo.svg'} alt='Logo' />
+        </div>
+
+        <div className={styles.title}>
+          Launching Soon...
+        </div>
+
+        <div className={styles.description}>
+          Remember, the thrill doesn't stop here. Join our Discord community and dive into our Whitepaper to stay updated on all things Viken. For sneak peeks and exclusive updates, follow us on Twitter. Get ready to conquer realms and rewrite sagas in CryptoVikens!
+        </div>
+
+        <div className={styles.buttons}>
+          <div className={styles.button}>
+            <Image width={25} height={25} src={'assets/social/discord.svg'} alt='Discord' />
+
+            <div className={styles.text}>
+              Join Discord
+            </div>
+          </div>
+
+          <div className={styles.button}>
+            <Image width={25} height={25} src={'assets/social/whitepaper.svg'} alt='Discord' />
+
+            <div className={styles.text}>
+              Whitepaper
+            </div>
+          </div>
+        </div>
       </div>
 
-      <div className={styles.grid}>
-        <a
-          href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className={styles.card}
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2>
-            Docs <span>-&gt;</span>
-          </h2>
-          <p>Find in-depth information about Next.js features and API.</p>
-        </a>
+      <div className={styles.footer}>
+        <div className={styles.rights}>
+          Copyright © 2024 CryptoVikings - All rights reserved.
+        </div>
 
-        <a
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className={styles.card}
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2>
-            Learn <span>-&gt;</span>
-          </h2>
-          <p>Learn about Next.js in an interactive course with&nbsp;quizzes!</p>
-        </a>
+        <div className={styles.social}>
+          <Image width={25} height={25} src={'assets/social/discord.svg'} alt='Social' />
+        </div>
 
-        <a
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className={styles.card}
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2>
-            Templates <span>-&gt;</span>
-          </h2>
-          <p>Explore starter templates for Next.js.</p>
-        </a>
+        <div className={styles.social}>
+          <Image width={25} height={25} src={'assets/social/x.svg'} alt='Social' />
+        </div>
 
-        <a
-          href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className={styles.card}
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2>
-            Deploy <span>-&gt;</span>
-          </h2>
-          <p>
-            Instantly deploy your Next.js site to a shareable URL with Vercel.
-          </p>
-        </a>
+        <div className={styles.social}>
+          <Image width={25} height={25} src={'assets/social/telegram.svg'} alt='Social' />
+        </div>
       </div>
-    </main>
+    </div>
   );
 }
