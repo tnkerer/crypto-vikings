@@ -5,11 +5,98 @@
   flex-direction: column;
   justify-content: space-between;
   align-items: center;
-  background-image: url('../../public/assets/backgrounds/landingpage.png');
+  background-image: url('../../public/assets/backgrounds/landingpage.svg');
   background-size: cover;
   background-repeat: no-repeat;
 
-  .centerContainer {
+  .navbar {
+    position: absolute;
+    top: 0;
+    right: 0;
+    margin: 30px 100px 0px 0px;
     
+    .sound {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background: rgba(1, 5, 16, 0.66);
+      padding: 15px 10px;
+      border-radius: 10px;
+    }
+  }
+
+  .centerContainer {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    gap: 75px;
+
+    .contentContainer {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 20px;
+
+      .title {
+        font-weight: 500;
+        font-size: 75px;
+      }
+
+      .description {
+        width: 750px;
+        
+        font-size: 18px;
+        text-align: center;
+      }
+
+      .buttons {
+        display: flex;
+        justify-content: center;
+        gap: 12px;
+
+        .button {
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          padding: 12px 16px;
+          gap: 12px;
+          background: rgba(1, 5, 16, 0.66);
+          border-radius: 10px;
+
+          .text {
+            margin-top: 3px;
+          }
+
+          &:hover {
+            cursor: pointer;
+            box-shadow: 0px 0px 12px 0px rgb(255, 247, 0);
+          }
+        }
+      }
+    }
+  }
+
+  .footer {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background: rgba(1, 5, 16, 1);
+    padding: 40px 200px;
+    font-size: 18px;
+
+    .socialContainer {
+      display: flex;
+      gap: 20px;
+
+      transition: 0.4s;
+
+      &:hover {
+        cursor: pointer;
+        filter: brightness(0.8);
+      }
+    }
   }
 }
