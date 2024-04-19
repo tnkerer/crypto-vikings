@@ -6,12 +6,14 @@ import Image from "next/image";
 import { Howl } from 'howler'
 
 import styles from "./styles.module.scss";
+import Link from "next/link";
 
 const sound = new Howl({
   src: ['/sounds/bgsound.mp3'],
-  autoplay: false,
+  autoplay: true,
   loop: true,
   volume: 0.02,
+
 });
 
 export default function Home() {
@@ -44,6 +46,8 @@ export default function Home() {
         </div>
       </div>
 
+      <div className={styles.snow} />
+
       <div />
 
       <div className={styles.centerContainer}>
@@ -57,25 +61,29 @@ export default function Home() {
           </div>
 
           <div className={styles.description}>
-            Remember, the thrill doesn&apos;t stop here. Join our Discord community and dive into our Whitepaper to stay updated on all things Viking. For sneak peeks and exclusive updates, follow us on Twitter. Get ready to conquer realms and rewrite sagas in CryptoVikings!
+            Get ready for a legendary journey! Welcome to CryptoVikings, the Play-to-Earn Click Game with strategy that will transport you to a unique world. Build, Fight and collect epic Rewards. Join our Discord Community and explore our Whitepaper! I&apos;ll see you there.
           </div>
 
           <div className={styles.buttons}>
-            <div className={styles.button}>
-              <Image width={25} height={25} src={'assets/social/discord.svg'} alt='Discord' />
+            <Link target="_blank" href={'https://discord.com/invite/cryptovikings'}>
+              <div className={styles.button}>
+                <Image width={25} height={25} src={'assets/social/discord.svg'} alt='Discord' />
 
-              <div className={styles.text}>
-                Join Discord
+                <div className={styles.text}>
+                  Join Discord
+                </div>
               </div>
-            </div>
+            </Link>
 
-            <div className={styles.button}>
-              <Image width={25} height={25} src={'assets/social/whitepaper.svg'} alt='Discord' />
+            <Link target="_blank" href={'https://docs.cryptovikings.gg/'}>
+              <div className={styles.button}>
+                <Image width={25} height={25} src={'assets/social/whitepaper.svg'} alt='Discord' />
 
-              <div className={styles.text}>
-                Whitepaper
+                <div className={styles.text}>
+                  Whitepaper
+                </div>
               </div>
-            </div>
+            </Link>
           </div>
         </div>
       </div>
@@ -86,17 +94,23 @@ export default function Home() {
         </div>
 
         <div className={styles.socialContainer}>
-          <div className={styles.social}>
-            <Image width={25} height={25} src={'assets/social/discord.svg'} alt='Social' />
-          </div>
+          <Link target="_blank" href={'https://discord.com/invite/cryptovikings'}>
+            <div className={styles.social}>
+              <Image width={25} height={25} src={'assets/social/discord.svg'} alt='Social' />
+            </div>
+          </Link>
 
-          <div className={styles.social}>
-            <Image width={25} height={25} src={'assets/social/x.svg'} alt='Social' />
-          </div>
+          <Link target="_blank" href={'https://twitter.com/CryptoVikingsGG'}>
+            <div className={styles.social}>
+              <Image width={25} height={25} src={'assets/social/x.svg'} alt='Social' />
+            </div>
+          </Link>
 
-          <div className={styles.social}>
-            <Image width={25} height={25} src={'assets/social/telegram.svg'} alt='Social' />
-          </div>
+          <Link target="_blank" href={'https://t.me/OfficialCryptoVikings'}>
+            <div className={styles.social}>
+              <Image width={25} height={25} src={'assets/social/telegram.svg'} alt='Social' />
+            </div>
+          </Link>
         </div>
       </div>
     </div>

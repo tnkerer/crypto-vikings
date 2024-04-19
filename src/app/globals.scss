@@ -92,6 +92,18 @@ body {
 }
 
 body {
+  cursor: url('../../public/assets/cursor/Mouse1.png') auto;
+}
+
+body:hover {
+  cursor: url('../../public/assets/cursor/Mouse2.png'), auto;
+}
+
+body:active {
+  cursor: url('../../public/assets/cursor/Mouse3-export.png'), auto;
+}
+
+body {
   color: rgb(var(--foreground-rgb));
   background: linear-gradient(
       to bottom,
