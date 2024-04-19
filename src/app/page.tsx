@@ -3,43 +3,28 @@
 import { useEffect, useState } from "react";
 import Image from "next/image";
 
-import { Howl } from 'howler'
+import AudioPlayer from 'react-audio-player';
 
 import styles from "./styles.module.scss";
 import Link from "next/link";
 
-const sound = new Howl({
-  src: ['/sounds/bgsound.mp3'],
-  autoplay: true,
-  loop: true,
-  volume: 0.02,
-
-});
-
 export default function Home() {
-  const [isPlaying, setIsPlaying] = useState(false);
-  const [isMuted, setIsMuted] = useState(true);
-
-  useEffect(() => {
-    sound.mute(isMuted);
-  }, [isMuted]);
-
-  const toggleSound = () => {
-    if (isPlaying) {
-      sound.stop();
-    } else {
-      sound.play();
-    }
-    setIsPlaying(!isPlaying);
-  };
+  const [isPlaying, setIsPlaying] = useState(true);
 
   const handleSoundButtonClick = () => {
-    setIsMuted(!isMuted);
-    toggleSound();
+    setIsPlaying(!isPlaying);
   };
 
   return (
     <div className={styles.container}>
+      {
+        isPlaying && (
+          <AudioPlayer 
+            src="./sounds/bgsound.mp3"
+            autoPlay
+            />
+        )
+      }
       <div className={styles.navbar}>
         <div className={styles.sound} onClick={handleSoundButtonClick}>
           <Image width={20} height={12} src={isPlaying == false ? 'assets/icons/mute.svg' : 'assets/icons/sound.svg'} alt='Logo' />
