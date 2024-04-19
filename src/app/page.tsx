@@ -15,13 +15,17 @@ export default function Home() {
     setIsPlaying(!isPlaying);
   };
 
+  useEffect(() => {
+    setIsPlaying(true);
+  }, []);
+
   return (
     <div className={styles.container}>
       {
         isPlaying && (
           <AudioPlayer 
             src="./sounds/bgsound.mp3"
-            autoPlay
+            autoPlay={isPlaying}
             />
         )
       }
