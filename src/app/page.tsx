@@ -19,11 +19,11 @@ export default function Home() {
     <div className={styles.container}>
       {
         isPlaying && (
-          <AudioPlayer 
+          <AudioPlayer
             src="./sounds/bgsound.mp3"
             autoPlay={isPlaying}
             volume={0.1}
-            />
+          />
         )
       }
       <div className={styles.navbar}>

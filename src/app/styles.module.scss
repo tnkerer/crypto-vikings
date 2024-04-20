@@ -9,12 +9,24 @@
   background-size: cover;
   background-repeat: no-repeat;
 
+  @media (max-width: 850px) {
+    background-position: center;
+  }
+
   .navbar {
     position: absolute;
     top: 0;
     right: 0;
     margin: 30px 100px 0px 0px;
     z-index: 1000;
+
+    @media (max-width: 850px) {
+      position: fixed;
+      top: 20px;
+      right: auto;
+      margin: auto;
+      align-content: center;
+    }
     
     .sound {
       display: flex;
@@ -65,13 +77,23 @@
       .title {
         font-weight: 500;
         font-size: 75px;
+
+        @media (max-width: 850px) {
+          font-weight: 500;
+          font-size: 48px;
+        }
       }
 
       .description {
         width: 750px;
-        
         font-size: 18px;
         text-align: center;
+
+        @media (max-width: 840px) {
+          width: 400px;
+          font-size: 16px;
+          text-align: center;
+        }
       }
 
       .buttons {
@@ -117,6 +139,13 @@
     font-size: 18px;
     z-index: 1;
 
+    @media (max-width: 850px) {
+      padding: 20px 20px;
+      align-items: center;
+      font-size: 14px;
+      flex-direction: column-reverse;
+    }
+
     .socialContainer {
       display: flex;
       gap: 20px;
@@ -127,7 +156,7 @@
         &:hover {
         cursor: url('../../public/assets/cursor/Mouse1.png'), auto;
         }
-        
+
         &:active {
           cursor: url('../../public/assets/cursor/Mouse2.png'), auto;
           filter: brightness(0.7);
