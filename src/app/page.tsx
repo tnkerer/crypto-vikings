@@ -22,7 +22,7 @@ export default function Home() {
           <AudioPlayer 
             src="./sounds/bgsound.mp3"
             autoPlay={isPlaying}
-            volume={0.3}
+            volume={0.1}
             />
         )
       }
