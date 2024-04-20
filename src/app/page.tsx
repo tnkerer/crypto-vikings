@@ -9,15 +9,11 @@ import styles from "./styles.module.scss";
 import Link from "next/link";
 
 export default function Home() {
-  const [isPlaying, setIsPlaying] = useState(true);
+  const [isPlaying, setIsPlaying] = useState(false);
 
   const handleSoundButtonClick = () => {
     setIsPlaying(!isPlaying);
   };
-
-  useEffect(() => {
-    setIsPlaying(true);
-  }, []);
 
   return (
     <div className={styles.container}>
@@ -26,6 +22,7 @@ export default function Home() {
           <AudioPlayer 
             src="./sounds/bgsound.mp3"
             autoPlay={isPlaying}
+            volume={0.3}
             />
         )
       }

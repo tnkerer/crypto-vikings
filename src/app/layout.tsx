@@ -2,8 +2,8 @@ import { Metadata } from "next";
 import "./globals.scss";
 
 export const metadata: Metadata = {
-  title: "Crypto Vikings",
-  description: "Crypto Vikings official website.",
+  title: "CryptoVikings",
+  description: "CryptoVikings official website.",
 };
 
 export default function RootLayout({
