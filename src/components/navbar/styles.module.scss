@@ -1,0 +1,91 @@
+.container {
+  width: 100%;
+  height: 115px;
+  background: #191919;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 50px 25px;
+  border-bottom: 1px solid #303030;
+
+  .logo {
+    transition: 0.4s;
+
+    &:hover {
+      filter: brightness(1.28);
+    }
+  }
+
+  .optionsContainer {
+    display: flex;
+    gap: 24px;
+    align-items: center;
+    margin-left: 190px;
+
+    @media (max-width: 1250px) {
+      margin-left: 0px;
+    }
+
+    .option {
+      width: fit-content;
+      height: 45px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      border-radius: 100px;
+      padding: 0px 12px;
+
+      transition: 0.4s;
+
+      &:hover {
+        background: rgba(247, 242, 236, 0.1);
+      }
+    }
+
+    .active {
+      width: fit-content;
+      height: 45px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background: rgba(247, 242, 236, 0.1);
+      border-radius: 100px;
+      padding: 0px 12px;
+    }
+  }
+
+  .walletContainer {
+    display: flex;
+    gap: 50px;
+    align-items: center;
+
+    .info {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      max-width: 150px;
+      font-size: 18px;
+
+      .coin {
+        margin-top: 5px;
+        margin-right: -5px;
+      }
+
+      .text {
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+      }
+    }
+  }
+  
+  .link {
+    &:hover {
+      cursor: url('../../../public/assets/cursor/Mouse1.png'), auto;
+    }
+
+    &:active {
+      cursor: url('../../../public/assets/cursor/Mouse2.png'), auto;
+    }
+  }
+}
