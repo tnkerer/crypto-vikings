@@ -1,30 +1,23 @@
 .container {
   width: 100%;
-  height: 115px;
-  background: #191919;
+  height: 90px;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 50px 25px;
+  background: #191919;
+  padding: 20px 50px;
+  border-top: 1px solid #303030;
   border-bottom: 1px solid #303030;
+  font-size: 18px;
 
-  .logo {
-    transition: 0.4s;
-
-    &:hover {
-      filter: brightness(1.28);
-    }
+  .info {
+    width: 100px;
   }
 
-  .optionsContainer {
+  .navigationContainer {
     display: flex;
-    gap: 24px;
     align-items: center;
-    margin-left: 190px;
-
-    @media (max-width: 1250px) {
-      margin-left: 0px;
-    }
+    gap: 12px;
 
     .option {
       width: fit-content;
@@ -55,38 +48,13 @@
     }
   }
 
-  .walletContainer {
-    display: flex;
-    gap: 50px;
-    align-items: center;
+  .filterContainer {
+    width: 100px;
 
-    .info {
+    .filter {
       display: flex;
       align-items: center;
-      gap: 8px;
-      max-width: 150px;
-      font-size: 18px;
-
-      .coin {
-        margin-top: 5px;
-        margin-right: -5px;
-      }
-
-      .text {
-        white-space: nowrap;
-        overflow: hidden;
-        text-overflow: ellipsis;
-      }
-    }
-  }
-  
-  .link {
-    &:hover {
-      cursor: url('../../../public/assets/cursor/Mouse1.png'), auto;
-    }
-
-    &:active {
-      cursor: url('../../../public/assets/cursor/Mouse2.png'), auto;
+      gap: 10px;
     }
   }
 }

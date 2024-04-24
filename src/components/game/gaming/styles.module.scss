@@ -1,3 +1,17 @@
 .container {
-  
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+
+  .banner {
+    width: 100%;
+    height: 225px;
+    background-image: url('../../../../public/assets/backgrounds/banner.svg');
+    background-size: cover;
+    background-position: center;
+  }
+
+  .gameNav {
+    width: 100%;
+  }
 }
