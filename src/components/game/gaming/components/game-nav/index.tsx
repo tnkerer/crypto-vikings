@@ -1,14 +1,20 @@
 'use client'
 
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 
 import styles from './styles.module.scss'
 import Image from 'next/image'
 
-type Props = {}
+type Props = {
+  navState: (navState: string) => void;
+}
 
-const GameNav = (props: Props) => {
+const GameNav = ({ navState }: Props) => {
   const [navigation, setNavigation] = useState('battle')
+
+  useEffect(() => {
+    navState(navigation)
+  }, [navigation, navState])
 
   return (
     <div className={styles.container}>

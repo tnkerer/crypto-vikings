@@ -1,0 +1,78 @@
+.container {
+  width: 290px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  padding: 20px;
+  border-radius: 20px;
+  background: #292828;
+
+  .header {
+    display: flex;
+    justify-content: space-between;
+
+    .name {
+      font-size: 18px;
+      font-style: normal;
+      font-weight: 500;
+      line-height: normal;
+      letter-spacing: -0.18px;
+    }
+
+    .options {
+      display: flex;
+      gap: 10px;
+    }
+  }
+
+  .image {
+    .img {
+      border-radius: 10px;
+    }
+  }
+
+  .warriorInfo {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+    padding: 12px;
+    border-radius: 8px;
+    background: rgba(247, 242, 236, 0.10);
+
+    .info {
+      display: flex;
+      justify-content: space-between;
+
+      font-size: 18px;
+      font-style: normal;
+      font-weight: 500;
+      line-height: normal;
+      letter-spacing: -0.18px;
+
+      .common {
+        color: #18AA00;
+      }
+
+      .reward {
+        display: flex;
+        gap: 10px;
+        color: #FF3737;
+      }
+    }
+  }
+
+  .buttons {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+
+    .button {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 12px 15px;
+      border-radius: 8px;
+      background: rgba(247, 242, 236, 0.10);
+    }
+  }
+}

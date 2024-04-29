@@ -1,0 +1,11 @@
+.container {
+  width: 100%;
+  padding: 25px 175px;
+  background: #191919;
+
+  .cardsGrid {
+    display: flex;
+    gap: 25px;
+    flex-wrap: wrap;
+  }
+}
